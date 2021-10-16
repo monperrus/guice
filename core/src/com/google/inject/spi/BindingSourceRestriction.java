@@ -346,7 +346,7 @@ public final class BindingSourceRestriction {
               annotations, Arrays.stream(clazz.getAnnotatedSuperclass().getAnnotations()));
     }
     return annotations
-        .map(Annotation::annotationType)
+        .map(a -> (Class<? extends Annotation>)a.annotationType())
         .filter(a -> a.isAnnotationPresent(RestrictedBindingSource.Permit.class));
   }
 }
