@@ -347,6 +347,6 @@ public final class BindingSourceRestriction {
     }
     return annotations
         .map(Annotation::annotationType)
-        .filter(a -> a.isAnnotationPresent(RestrictedBindingSource.Permit.class));
+        .filter(a -> a.isAnnotationPresent(RestrictedBindingSource.Permit.class)).map(x->x);
   }
 }
